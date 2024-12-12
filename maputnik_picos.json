@@ -17,6 +17,10 @@
     "picos": {
       "type": "geojson",
       "data": "https://raw.githubusercontent.com/encarnihinojosa/mapasSUR/refs/heads/main/picos.json"
+    },
+    "picosok": {
+      "type": "geojson",
+      "data": "https://raw.githubusercontent.com/encarnihinojosa/sierrasypicos/refs/heads/main/picos_ok.json"
     }
   },
   "sprite": "https://openmaptiles.github.io/maptiler-basic-gl-style/sprite",
@@ -742,18 +746,6 @@
       }
     },
     {
-      "id": "picosmenos",
-      "type": "circle",
-      "source": "picos",
-      "filter": ["all", ["==", "cota", "menosmil"]],
-      "paint": {
-        "circle-radius": {"stops": [[6, 2], [10, 8]]},
-        "circle-color": "#69A558",
-        "circle-blur": 0,
-        "circle-opacity": 0.7
-      }
-    },
-    {
       "id": "country_label-other",
       "type": "symbol",
       "source": "openmaptiles",
@@ -806,38 +798,46 @@
       }
     },
     {
-      "id": "picosmil",
+      "id": "picosokmenos",
       "type": "circle",
-      "source": "picos",
+      "source": "picosok",
+      "filter": ["all", ["==", "cota", "menosmil"]],
+      "paint": {
+        "circle-radius": {"stops": [[6, 2], [10, 8]]},
+        "circle-color": "#69A558",
+        "circle-opacity": 0.7
+      }
+    },
+    {
+      "id": "picosokmil",
+      "type": "circle",
+      "source": "picosok",
       "filter": ["all", ["==", "cota", "mil"]],
       "paint": {
         "circle-radius": {"stops": [[6, 2], [10, 8]]},
         "circle-color": "#F2BE05",
-        "circle-blur": 0,
         "circle-opacity": 0.7
       }
     },
     {
-      "id": "picosdos",
+      "id": "picosokdos",
       "type": "circle",
-      "source": "picos",
+      "source": "picosok",
       "filter": ["all", ["==", "cota", "dosmil"]],
       "paint": {
         "circle-radius": {"stops": [[6, 2], [10, 8]]},
         "circle-color": "#C46B02",
-        "circle-blur": 0,
         "circle-opacity": 0.7
       }
     },
     {
-      "id": "picostres",
+      "id": "picosoktres",
       "type": "circle",
-      "source": "picos",
+      "source": "picosok",
       "filter": ["all", ["==", "cota", "tresmil"]],
       "paint": {
         "circle-radius": {"stops": [[6, 4], [10, 10]]},
         "circle-color": "#DF4328",
-        "circle-blur": 0,
         "circle-opacity": 0.7
       }
     }
